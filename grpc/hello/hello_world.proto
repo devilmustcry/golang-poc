@@ -2,16 +2,16 @@ syntax = "proto3";
 
 option go_package = "./hello";
 
-package hello;
+package drawing;
 
-service hello {
-  rpc Greet(Hello) returns (Greeting) {}
+service drawing {
+  rpc DrawPyramid(HeightPyramid) returns (Pyramid) {}
 }
 
-message Hello {
-  string hello_message = 1;
+message HeightPyramid {
+  int32 height = 1;
 }
 
-message Greeting {
-  int64 round = 1;
+message Pyramid {
+  string pyramidString = 1;
 }
