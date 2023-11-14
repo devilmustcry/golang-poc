@@ -18,7 +18,7 @@ var round int64 = 0
 
 func (h helloServer) Greet(ctx context.Context, req *hello.Hello) (*hello.Greeting, error) {
 	round++
-	fmt.Println("Greet from client: ", req.HelloMessage)
+	fmt.Println("Greet from socket_client: ", req.HelloMessage)
 	return &hello.Greeting{Round: round}, nil
 }
 
@@ -31,6 +31,6 @@ func main() {
 	var opts []grpc.ServerOption
 	grpcServer := grpc.NewServer(opts...)
 	hello.RegisterHelloServer(grpcServer, helloServer{})
-	fmt.Println("Grpc server serve at port: 8080")
+	fmt.Println("Grpc scoket_server serve at port: 8080")
 	grpcServer.Serve(lis)
 }

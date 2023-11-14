@@ -18,7 +18,7 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// HelloClient is the client API for Hello service.
+// HelloClient is the socket_client API for Hello service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type HelloClient interface {
@@ -42,7 +42,7 @@ func (c *helloClient) Greet(ctx context.Context, in *Hello, opts ...grpc.CallOpt
 	return out, nil
 }
 
-// HelloServer is the server API for Hello service.
+// HelloServer is the scoket_server API for Hello service.
 // All implementations must embed UnimplementedHelloServer
 // for forward compatibility
 type HelloServer interface {
