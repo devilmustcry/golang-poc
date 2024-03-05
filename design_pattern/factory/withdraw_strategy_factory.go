@@ -1,6 +1,6 @@
 package factory
 
-import "golang-poc/strategy_pattern/strategy"
+import "golang-poc/design_pattern/strategy"
 
 type WithdrawStrategyFactory struct {
 	mostFirst  strategy.WithdrawnStrategy
