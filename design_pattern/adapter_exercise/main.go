@@ -8,5 +8,8 @@ func main() {
 
 	computer1.InsertIntoLightningPort()
 
+	computer2 = NewWindowAdapter()
+
+	computer2.InsertIntoLightningPort()
 	//TODO: Make computer 2 be able to use window function without change window file
 }

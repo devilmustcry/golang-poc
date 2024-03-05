@@ -1,20 +1,16 @@
 package main
 
 import (
-	"golang-poc/design_pattern/adapter/first_party"
-	"golang-poc/design_pattern/adapter/third_party"
+	"golang-poc/design_pattern/adapter/gorm"
+	"golang-poc/design_pattern/adapter/mongo"
 )
 
 func main() {
-	var party1 first_party.Party
-	var party2 first_party.Party
-	party1 = first_party.FirstParty{}
-	party1.SomeCodeThatWeCanChanged()
+	var a ProductRepository
+	var b ProductRepository
+	a = gorm.GormRepository{}
+	b = mongo.MongoRepository{}
 
-	party2 = third_party.ThirdPartyAdapter{
-		ThirdParty: third_party.ThirdParty{},
-	}
-
-	party2.SomeCodeThatWeCanChanged()
-
+	a.GetProduct()
+	b.GetProduct()
 }
